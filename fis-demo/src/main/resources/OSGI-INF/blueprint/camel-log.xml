@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 
-     Copyright 2005-2016 Red Hat, Inc.
+     Copyright 2005-2015 Red Hat, Inc.
 
      Red Hat licenses this file to you under the Apache License, version
      2.0 (the "License"); you may not use this file except in compliance
@@ -45,11 +45,11 @@
           route is doing.
         -->
         <route id="log-route">
-          <from uri="timer:foo?period=1s"/>
+          <from uri="timer:foo?period=5s"/>
             <setBody>
                 <simple>Hello from Camel!</simple>
             </setBody>
-            <log message=">>> ${body} : ${id}"/>
+            <log message=">>> ${body} : ${sys.runtime.id}"/>
         </route>
     </camelContext>
 
